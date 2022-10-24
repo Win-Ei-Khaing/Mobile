@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.TableRow
 import android.widget.TextView
 import com.example.tablelayouttest.databinding.ActivityMainBinding
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -53,5 +54,8 @@ class MainActivity : AppCompatActivity() {
         tvCodeName.layoutParams = tvCodeNameParam
 
         binding.androidTable.addView(tableRow)
+
+        etAndroidVersion.text.clear()
+        etAndroidCodeNm.text.clear()
     }
 }
