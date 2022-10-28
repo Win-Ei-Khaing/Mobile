@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShoppingCategoryActivity">
+
+    <TextView
+        android:id="@+id/tvWelcomeText"
+        android:layout_marginTop="28dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right"/>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Shop by Categories"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvWelcomeText" />
+
+    <ImageView
+        android:id="@+id/ivElectronics"
+        android:layout_width="171dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="46dp"
+        app:layout_constraintEnd_toStartOf="@+id/ivClothing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvTitle"
+        app:srcCompat="@drawable/electronics"
+        android:onClick="ivClick"/>
+
+    <TextView
+        android:id="@+id/tvElectronics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="188dp"
+        android:layout_marginEnd="136dp"
+        android:text="@string/electronicText"
+        app:layout_constraintEnd_toStartOf="@+id/tvClothes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivElectronics" />
+
+    <ImageView
+        android:id="@+id/ivClothing"
+        android:layout_width="198dp"
+        android:layout_height="174dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        app:srcCompat="@drawable/clothing"
+        android:onClick="ivClick"/>
+
+    <TextView
+        android:id="@+id/tvClothes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="192dp"
+        android:layout_marginEnd="84dp"
+        android:text="@string/clothingText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivClothing" />
+
+    <ImageView
+        android:id="@+id/ivBeauty"
+        android:layout_width="169dp"
+        android:layout_height="157dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toStartOf="@+id/ivFood"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvElectronics"
+        app:srcCompat="@drawable/beauty"
+        android:onClick="ivClick"/>
+
+    <TextView
+        android:id="@+id/tvBeauty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="176dp"
+        android:text="@string/beautyText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivBeauty" />
+
+    <ImageView
+        android:id="@+id/ivFood"
+        android:layout_width="199dp"
+        android:layout_height="163dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvClothes"
+        app:srcCompat="@drawable/food"
+        android:onClick="ivClick"/>
+
+    <TextView
+        android:id="@+id/tvFood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="198dp"
+        android:layout_marginTop="176dp"
+        android:text="@string/foodText"
+        app:layout_constraintStart_toStartOf="@+id/tvBeauty"
+        app:layout_constraintTop_toTopOf="@+id/ivFood" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

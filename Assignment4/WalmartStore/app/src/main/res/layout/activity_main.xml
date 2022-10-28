@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/ivWalmartLogo"
+        android:layout_width="406dp"
+        android:layout_height="115dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/walmart_logo" />
+
+    <TextView
+        android:id="@+id/tvSignInTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="128dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/signInTitle"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivWalmartLogo" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="361dp"
+        android:layout_height="549dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvSignInTitle">
+
+        <TextView
+            android:id="@+id/tvEmailAddress"
+            android:layout_width="154dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="48dp"
+            android:text="Email address (required)"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etUserName"
+            android:layout_width="310dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="28dp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.411"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvEmailAddress"
+            tools:ignore="SpeakableTextPresentCheck"/>
+
+        <TextView
+            android:id="@+id/tvPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="79dp"
+            android:text="Password (required)"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/etUserName" />
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="301dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="32dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvPassword"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/tvForgotPassword"
+            android:layout_width="113dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="57dp"
+            android:autoLink="all"
+            android:clickable="true"
+            android:onClick="sendStoredPassword"
+            android:text="Forgot password?"
+            android:textColor="@color/blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.86"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/etPassword" />
+
+        <Button
+            android:id="@+id/btnSignIn"
+            android:layout_width="294dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="96dp"
+            android:backgroundTint="@color/blue"
+            android:text="@string/signInButtonText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etPassword"
+            android:onClick="signIn"/>
+
+        <TextView
+            android:id="@+id/tvNoAccount"
+            android:layout_width="296dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="39dp"
+            android:gravity="center"
+            android:text="----------Don't have an account?----------"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnSignIn" />
+
+        <Button
+            android:id="@+id/btnCreate"
+            android:layout_width="294dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/white"
+            android:onClick="goToRegisterActivity"
+            android:text="@string/createButtonText"
+            android:textColor="#1976D2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNoAccount" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="505dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
