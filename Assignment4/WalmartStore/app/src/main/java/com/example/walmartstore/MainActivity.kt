@@ -1,11 +1,13 @@
 package com.example.walmartstore
 
+import android.app.Activity
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_register.*
 
@@ -21,12 +23,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        var resultContracts = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){ result->
+            if(result.resultCode == Activity.RESULT_OK) {
+                var data=result.data?.getSerializableExtra("user") as User
+                users.add(data)
+            }
+        }
+
+        btnCreate.setOnClickListener{
+
+            var intent = Intent(this,RegisterActivity::class.java)
+            resultContracts.launch(intent)
+        }
+
         etUserName.requestFocus()
-
-        val user: User? = intent.getSerializableExtra("user") as User?
-        user?.let { users.add(user) }
-
-        //Toast.makeText(this, "Added  ${user?.firstname}! Users count : "+users.count(), Toast.LENGTH_SHORT).show()
     }
 
     fun signIn(view: View) {
@@ -53,10 +64,6 @@ class MainActivity : AppCompatActivity() {
         if(!correctUser){
             Toast.makeText(this,"Invalid username and password.", Toast.LENGTH_LONG).show()
         }
-    }
-
-    fun goToRegisterActivity(view: View){
-        startActivity(Intent(this, RegisterActivity::class.java))
     }
 
     fun sendStoredPassword(view: View) {

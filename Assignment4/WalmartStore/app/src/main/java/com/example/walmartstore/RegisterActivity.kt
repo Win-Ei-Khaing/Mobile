@@ -1,6 +1,8 @@
 package com.example.walmartstore
 
+import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -11,30 +13,33 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
-    }
 
-    fun createUser(view : View){
-        val firstName  = etUserFirstName.text.toString().trim();
-        val lastName = etUserLastName.text.toString().trim()
-        val emailAddress= etUserEmailAddress.text.toString().trim()
-        val password = etUserPassword.text.toString().trim()
+        btnUserCreate.setOnClickListener {
 
-        if(firstName.isEmpty() || lastName.isEmpty() || emailAddress.isEmpty() || password.isEmpty()){
-            Toast.makeText(applicationContext,"Please fill all required fields", Toast.LENGTH_LONG).show()
-        }
-        else{
-            val user = User(firstName, lastName, emailAddress, password)
-            Toast.makeText(applicationContext, "Account created successfully", Toast.LENGTH_LONG)
-                .show()
+            val firstName  = etUserFirstName.text.toString().trim();
+            val lastName = etUserLastName.text.toString().trim()
+            val emailAddress= etUserEmailAddress.text.toString().trim()
+            val password = etUserPassword.text.toString().trim()
 
-            etUserFirstName.text.clear()
-            etUserLastName.text.clear()
-            etUserEmailAddress.text.clear()
-            etUserPassword.text.clear()
+            if(firstName.isEmpty() || lastName.isEmpty() || emailAddress.isEmpty() || password.isEmpty()){
+                Toast.makeText(applicationContext,"Please fill all required fields", Toast.LENGTH_LONG).show()
+            }
+            else{
+                val user = User(firstName, lastName, emailAddress, password)
+                Toast.makeText(applicationContext, "Account created successfully", Toast.LENGTH_LONG)
+                    .show()
 
-            val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("user", user)
-            startActivity(intent)
+                val intent=intent
+                intent.putExtra("user", user)
+                setResult(Activity.RESULT_OK, intent)
+
+                etUserFirstName.text.clear()
+                etUserLastName.text.clear()
+                etUserEmailAddress.text.clear()
+                etUserPassword.text.clear()
+
+                finish()
+            }
         }
     }
 }
