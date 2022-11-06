@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Quiz App</string>
+    <string name="question1">1. The primary constructor comes right after the class name in the header part of the class.</string>
+    <string name="question2">2. If you want Inherit, in Kotlin you have declare the parent class with the keyword ________</string>
+</resources>
