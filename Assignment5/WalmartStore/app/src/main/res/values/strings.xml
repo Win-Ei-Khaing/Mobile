@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">WalmartStore</string>
+    <string name="signInTitle">Sign in to your account</string>
+    <string name="signInButtonText">Sign In</string>
+    <string name="createButtonText">Create a new account</string>
+    <string name="electronicText">Electronics</string>
+    <string name="clothingText">Clothing</string>
+    <string name="beautyText">Beauty</string>
+    <string name="foodText">Food</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>
