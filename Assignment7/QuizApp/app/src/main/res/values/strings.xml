@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+    <string name="please_provide_answer_toast_message">Pleas select your answer from the choice.</string>
+    <string name="aboutApp">This is for Assignment 7 for mobile device programming DE course. \n\nHere this Quiz app will have 15 questions and will test the android knowledge. </string>
+    <string name="startQuiz">Start Quiz</string>
+    <string name="start">START</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="tryAgain">Try Again</string>
+    <string name="result_analysis">Result Analysis</string>
+    <string name="score">0/15</string>
+    <string name="_1_questions_list">1. Kotlin Strings are mutable1. Kotlin Strings are mutable1. Kotlin Strings are mutable1. Kotlin Strings are mutable1. Kotlin Strings are mutable1. Kotlin Strings are mutable1. Kotlin Strings are mutable1. Kotlin Strings are mutable1. Kotlin Strings are mutable1. Kotlin Strings are mutable1. Kotlin Strings are mutable1. Kotlin Strings are mutable</string>
+    <string name="true_answer">True</string>
+    <string name="false_answer">False</string>
+    <string name="i_am_not_sure">I am not sure</string>
+</resources>
